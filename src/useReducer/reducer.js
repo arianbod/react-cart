@@ -33,6 +33,13 @@ export const reducer = (state, action) => {
             break;
         case vars.CLEAR_ITEMS:
             return { ...state, cart: new Map() }
+
+        case vars.LOADING:
+            return { ...state, isLoading: true }
+        case vars.DISPLAY_ITEMS:
+            NewCart = new Map(action.payload.ResData.map((item) => [item.id, item]))
+
+            return { ...state, isLoading: false, cart: NewCart }
             break;
 
         default:
