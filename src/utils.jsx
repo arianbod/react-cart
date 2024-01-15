@@ -4,7 +4,6 @@ export const getTotals = (cart) => {
 	let totalCost = 0;
 
 	for (let { amount, price } of cart.values()) {
-		console.log(typeof amount, typeof price);
 		totalAmount += amount;
 		totalCost += parseFloat(price) * amount;
 	}
